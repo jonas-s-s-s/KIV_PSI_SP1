@@ -6,7 +6,7 @@
 
 Epoll::Epoll(bool isEdgeTriggered) : _epollFd(epoll_create1(0)), _isEdgeTriggered(isEdgeTriggered) {
     if (_epollFd == -1) {
-        throw std::runtime_error("Epoll::Epoll: ERROR - Failed to create epoll file descriptor.");
+        throw std::runtime_error("Epoll::Epoll: ERROR - Failed to create _epoll file descriptor.");
     }
 
     _eventsVector.reserve(_maxEventsNum * sizeof(epoll_event));

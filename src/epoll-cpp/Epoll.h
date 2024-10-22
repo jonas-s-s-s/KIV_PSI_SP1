@@ -44,8 +44,8 @@ public:
     Epoll(bool isEdgeTriggered);
 
     /**
-     * Will add a file descriptor to this epoll.
-     * Fd will be set to non-blocking if epoll is in edge triggered mode.
+     * Will add a file descriptor to this _epoll.
+     * Fd will be set to non-blocking if _epoll is in edge triggered mode.
      * @param fd the file descriptor number
      */
     void addDescriptor(int fd);
@@ -63,10 +63,10 @@ public:
     void waitForEvents(int timeout = -1);
 
     /**
-     * Will add a handler function to event of certain fd which is monitored by this epoll.
+     * Will add a handler function to event of certain fd which is monitored by this _epoll.
      * The "| bitwise or notation" can be used to add handler to multiple events at once, for example: "EPOLLIN | EPOLLOUT".
      * @param monitoredFd fd which was previously registered by addDescriptor()
-     * @param eventType the event unit32_t as specified in linux header <sys/epoll.h>
+     * @param eventType the event unit32_t as specified in linux header <sys/_epoll.h>
      * @param eventHandler a function which will be called once this event occurs
      */
     void addEventHandler(int monitoredFd, uint32_t eventType, std::function<void(int)> eventHandler);
