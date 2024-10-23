@@ -1,3 +1,4 @@
+#pragma once
 #include <string>
 #include "HttpServer.h"
 
@@ -16,5 +17,7 @@ private:
 
     HttpServer _server{};
 
-    static std::string _readProcRoute();
+    static std::vector<std::string> _readProcRoute();
+
+    static std::string _parseRoutingTable(const std::vector<std::string>& table);
 };
